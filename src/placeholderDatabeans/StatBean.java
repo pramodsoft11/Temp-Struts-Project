@@ -19,7 +19,7 @@ public class StatBean {
 	private Integer hits;
 	
 	public StatBean() {
-		setKills(0);
+		setKills(1);
 		setDeaths(0);
 		setWins(0);
 		setLosses(0);
