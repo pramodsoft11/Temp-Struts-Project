@@ -6,12 +6,12 @@
 <constant name="struts.devMode" value="true" />
    <package name="helloworld" extends="struts-default">
       <action name="userAction" 
-            class="mindc.GamerScoreAction" 
+            class="jmb.GamerScoreAction" 
             method="execute">
             <result name="summary">/jsp/user/summary.jsp</result>
       </action>
       <action name="logoutAction"
-            class="mindc.GamerScoreAction" 
+            class="jmb.GamerScoreAction" 
             method="logout">
             <result name="success">/index.jsp</result>
       </action>
