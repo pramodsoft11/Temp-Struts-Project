@@ -5,14 +5,27 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<head>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <LINK href="style/style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
 <title>Gamerscore App</title>
 </head>
+
 <body>
-   <h1>Generic Login Screen Here.</h1>
-   <form action="user">
-      <label for="name">Enter your login name</label><br/>
-      <input type="text" name="name"/>
-      <input type="submit" value="login"/>
-   </form>
+	<div id="wrapper">
+		<div id="header">
+			Welcome to the Generic Gamer Profile Project.
+		</div>
+		<div id="login">
+			<form action="user">
+				<label>Please enter your name to "login"</label><br/>
+				<input type="text" name="name"/>
+				<input type="submit" value="login"/>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
