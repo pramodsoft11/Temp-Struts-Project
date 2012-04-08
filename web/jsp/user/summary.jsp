@@ -11,12 +11,12 @@
 <body>
 <div id="wrapper">
 	<div id="gamertag"><s:property value="user.name"/>
-		<form action="logoutAction"><input type="submit" value="logout"/></form>
+		<form action="logout"><input type="submit" value="logout"/></form>
 	</div>
 	<div id="menu">
 		<ul>
 			<li class="current_page_item"><a href="#">Summary</a></li>
-			<li><a href="lastgame.jsp">Last Game</a></li>
+			<li><a href="<s:url action="nav"><s:param name="target" value="%{'lastgame'}"/></s:url>">Last Game</a></li>
 		</ul>
 	</div>
 	<div id="profileContent">
@@ -29,7 +29,6 @@
 		<div class="profileStat">Hits: <s:property value="user.totalStats.hits"/></div>
 		<div class="profileStat">Accuracy: <s:property value="user.totalStats.accuracy"/></div>
 	</div>
-	
 </div>
 </body>
 </html>

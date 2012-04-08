@@ -5,12 +5,20 @@
 <struts>
 <constant name="struts.devMode" value="true" />
    <package name="helloworld" extends="struts-default">
-      <action name="userAction" 
+      <action name="user" 
             class="jmb.GamerScoreAction" 
-            method="execute">
+            method="login">
             <result name="summary">/jsp/user/summary.jsp</result>
       </action>
-      <action name="logoutAction"
+      
+      <action name="nav"
+            class="jmb.GamerScoreAction" 
+            method="nav">
+            <result name="summary">/jsp/user/summary.jsp</result>
+            <result name="lastgame">/jsp/user/lastgame.jsp</result>
+      </action>
+      
+      <action name="logout"
             class="jmb.GamerScoreAction" 
             method="logout">
             <result name="success">/index.jsp</result>

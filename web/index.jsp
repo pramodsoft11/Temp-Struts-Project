@@ -8,8 +8,8 @@
 <title>Gamerscore App</title>
 </head>
 <body>
-   <h1>Gamerscore login</h1>
-   <form action="userAction">
+   <h1>Generic Login Screen Here.</h1>
+   <form action="user">
       <label for="name">Enter your login name</label><br/>
       <input type="text" name="name"/>
       <input type="submit" value="login"/>
