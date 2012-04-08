@@ -10,7 +10,7 @@
 
 <body>
 <div id="wrapper">
-	<div id="gamertag"><s:property value="user.name"/>
+	<div id="gamertag"><s:property value="#session.user.name"/>
 		<form action="logout"><input type="submit" value="logout"/></form>
 	</div>
 	<div id="menu">
@@ -20,14 +20,14 @@
 		</ul>
 	</div>
 	<div id="profileContent">
-		<div class="profileStat">Kills: <s:property value="user.lastGameStats.kills"/></div>
-		<div class="profileStat">Deaths: <s:property value="user.lastGameStats.deaths"/></div>
-		<div class="profileStat">Wins: <s:property value="user.lastGameStats.wins"/></div>
-		<div class="profileStat">Losses: <s:property value="user.lastGameStats.losses"/></div>
-		<div class="profileStat">Time Played: <s:property value="user.lastGameStats.time"/></div>
-		<div class="profileStat">Shots: <s:property value="user.lastGameStats.shots"/></div>
-		<div class="profileStat">Hits: <s:property value="user.lastGameStats.hits"/></div>
-		<div class="profileStat">Accuracy: <s:property value="user.lastGameStats.accuracy"/></div>
+		<div class="profileStat">Kills: <s:property value="#session.user.lastGameStats.kills"/></div>
+		<div class="profileStat">Deaths: <s:property value="#session.user.lastGameStats.deaths"/></div>
+		<div class="profileStat">Wins: <s:property value="#session.user.lastGameStats.wins"/></div>
+		<div class="profileStat">Losses: <s:property value="#session.user.lastGameStats.losses"/></div>
+		<div class="profileStat">Time Played: <s:property value="#session.user.lastGameStats.time"/></div>
+		<div class="profileStat">Shots: <s:property value="#session.user.lastGameStats.shots"/></div>
+		<div class="profileStat">Hits: <s:property value="#session.user.lastGameStats.hits"/></div>
+		<div class="profileStat">Accuracy: <s:property value="#session.user.lastGameStats.accuracy"/></div>
 	</div>
 </div>
 </body>

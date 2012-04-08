@@ -1,10 +1,15 @@
 package jmb;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import placeholderDatabeans.UserBean;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.util.ValueStack;
 
 public class GamerScoreAction {
 	private String name;
-	private UserBean user;
 	
 	private String target;
 	
@@ -12,6 +17,23 @@ public class GamerScoreAction {
 	private static final String SUCCESS = "success";
 
 	   public String login() throws Exception {
+		   Map<String, Object> session = ActionContext.getContext().getSession();
+//		   ValueStack stack = ActionContext.getContext().getValueStack();
+		   /*
+		   Map<String, Object> context = new HashMap<String, Object>();
+		   */
+		   if (session.get("user") == null) {
+			   UserBean user = new UserBean();
+			   user.setName(name);
+				user.getTotalStats().setShots(1000);
+				user.getTotalStats().setHits(40);
+				user.onGameFinish();
+				session.put("user", user);
+//			   stack.push(context);
+		   }
+		   
+		   
+		   /*
 		  if (user == null) {
 			  user = new UserBean();
 			  user.setName(name);
@@ -24,6 +46,7 @@ public class GamerScoreAction {
 				user.onGameFinish();
 			}
 		  }
+		  */
 		  return SUMMARY;
 	   }
 	   
@@ -31,14 +54,14 @@ public class GamerScoreAction {
 	   // just navigate based on the value provided by the clicked button/link. Probably bad practice in the real world, we shall see.
 	   public String nav() throws Exception {
 		   //TODO get the target param, use that as the forward.
-		   System.out.println(getTarget());
 		   return getTarget();
 	   }
 	   
 	   
 	   // remove the UserBean. 
 	   public String logout() throws Exception {
-		   user = null;
+		   Map<String, Object> session = ActionContext.getContext().getSession();
+		   session.remove("user");
 		   return SUCCESS;
 	   }
 	   
@@ -50,15 +73,6 @@ public class GamerScoreAction {
 	   public void setName(String name) {
 	      this.name = name;
 	   }
-	   
-	   public UserBean getUser() {
-		   return user;
-	   }
-	   
-	   public void setUser(UserBean user) {
-		   this.user = user;
-	   }
-
 
 	public String getTarget() {
 		return target;
